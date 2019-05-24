@@ -373,7 +373,7 @@ export default class CountryPicker extends Component {
         marginLeft: 25,
         borderRadius:20,width:'80%',flexDirection: 'row'}}>
 
-           <Image source={require('./search.png')} style={{width:14,height:14,justifyContent:'center',alignItems: 'center',position:'absolute',top:14,left:12}} />
+           <Image source={require('./search.png')} style={{width:14,height:14,justifyContent:'center',alignItems: 'center',position:'absolute',top:12,left:12}} />
 
           <TextInput
             autoFocus={autoFocusFilter}
