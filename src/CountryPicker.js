@@ -16,7 +16,7 @@ import {
   ListView,
   FlatList,
   ScrollView,
-  Platform
+  Platform, Dimensions
 } from 'react-native'
 
 import Fuse from 'fuse.js'
@@ -388,6 +388,23 @@ export default class CountryPicker extends Component {
     )
   }
 
+  checkDevice = () => {
+    if (Platform.OS === 'ios') {
+      return this.isIPhoneX();
+    }
+    return false;
+  }
+
+    isIPhoneX = () => {
+      const dimen = Dimensions.get('window');
+      return (
+        Platform.OS === 'ios' &&
+        !Platform.isPad &&
+        !Platform.isTVOS &&
+        (dimen.height >= 812)
+      );
+    }
+
   render() {
     return (
       <View style={styles.container}>
@@ -420,7 +437,7 @@ export default class CountryPicker extends Component {
           visible={this.state.modalVisible}
           onRequestClose={() => this.setState({ modalVisible: false })}
         >
-          <SafeAreaView style={styles.modalContainer}>
+          <View style={[styles.modalContainer,{marginTop: this.checkDevice() ? 30 : 0}]}>
             <View style={styles.header}>
               {this.props.closeable && (
                 <CloseButton
@@ -453,7 +470,7 @@ export default class CountryPicker extends Component {
                 )}
               </View>
             </KeyboardAvoidingView>
-          </SafeAreaView>
+          </View>
         </Modal>
       </View>
     )
