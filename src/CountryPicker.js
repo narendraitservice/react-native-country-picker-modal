@@ -93,7 +93,7 @@ export default class CountryPicker extends Component {
     countryList: cca2List,
     hideCountryFlag: false,
     excludeCountries: [],
-    filterPlaceholder: 'Filter',
+    filterPlaceholder: 'Search',
     autoFocusFilter: true,
     transparent: false,
     animationType: 'none'
@@ -369,15 +369,22 @@ export default class CountryPicker extends Component {
     return renderFilter ? (
       renderFilter({ value, onChange, onClose })
     ) : (
-      <TextInput
-        autoFocus={autoFocusFilter}
-        autoCorrect={false}
-        placeholder={filterPlaceholder}
-        placeholderTextColor={filterPlaceholderTextColor}
-        style={[styles.input, !this.props.closeable && styles.inputOnly]}
-        onChangeText={onChange}
-        value={value}
-      />
+      <View style={{backgroundColor:'#f5f5f5',
+        marginLeft: 25,
+        borderRadius:20,width:'80%',flexDirection: 'row'}}>
+
+           <Image source={require('./search.png')} style={{width:14,height:14,justifyContent:'center',alignItems: 'center',position:'absolute',top:14,left:12}} />
+
+          <TextInput
+            autoFocus={autoFocusFilter}
+            autoCorrect={false}
+            placeholder={filterPlaceholder}
+            placeholderTextColor={filterPlaceholderTextColor}
+            style={[styles.input, !this.props.closeable && styles.inputOnly]}
+            onChangeText={onChange}
+            value={value}
+          />
+      </View>
     )
   }
 
