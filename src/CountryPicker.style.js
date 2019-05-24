@@ -5,7 +5,8 @@ export default StyleSheet.create({
   container: {},
   modalContainer: {
     backgroundColor: 'white',
-    flex: 1
+    flex: 1,
+
   },
   contentContainer: {
     flex: 1,
@@ -15,11 +16,14 @@ export default StyleSheet.create({
   },
   header: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderBottomWidth:0.3,
+    borderBottomColor:'#d7d7d7'
   },
   input: {
-    height: 48,
-    width: '70%'
+    height: 40,
+    width: '70%',
+    marginLeft: 35
   },
   inputOnly: {
     marginLeft: '15%'
@@ -49,7 +53,7 @@ export default StyleSheet.create({
   },
   itemCountry: {
     flexDirection: 'row',
-    height: getHeightPercent(7),
+    height: getHeightPercent(5),
     justifyContent: 'flex-start',
     alignItems: 'center',
     paddingHorizontal: 5
@@ -66,11 +70,13 @@ export default StyleSheet.create({
     width: '100%',
     borderBottomWidth: 2 / PixelRatio.get(),
     borderBottomColor: '#ccc',
-    height: 22
+    height: 27
 
   },
   countryName: {
-    fontSize: getHeightPercent(2.2)
+    fontSize: 14,//getHeightPercent(2),
+    justifyContent:'center',
+    marginTop : 7
   },
   countryCode: {
     textAlign: 'right'
@@ -82,27 +88,30 @@ export default StyleSheet.create({
     marginRight: 10,
     backgroundColor: 'transparent',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 35
   },
   letter: {
-    height: 25,
+    height: 23,
     width: 20,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+
   },
   letterText: {
     textAlign: 'center',
-    fontSize: getHeightPercent(2.2)
+    fontSize: 14 //getHeightPercent(2.2)
   },
   closeButton: {
-    height: 48,
-    width: '15%',
+    height: 20,
+    width: 20,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginLeft:15
   },
   closeButtonImage: {
-    height: 24,
-    width: 24,
+    height: 20,
+    width: 20,
     resizeMode: 'contain'
   }
 })
