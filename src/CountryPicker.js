@@ -13,12 +13,11 @@ import {
   Modal,
   Text,
   TextInput,
-  ListView,
   FlatList,
   ScrollView,
   Platform, Dimensions
 } from 'react-native'
-
+import ListView from 'deprecated-react-native-listview';
 import Fuse from 'fuse.js'
 
 import cca2List from '../data/cca2.json'
